@@ -12,9 +12,9 @@ jobs:
 
     steps:
       - name: Cloning repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.0
       - name: Use Node.js 23.x
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.0.4
         with:
           node-version: 23.x
       - name: Installing dependencies
