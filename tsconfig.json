@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
     "target": "ES2024",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "node16",
+    "moduleResolution": "node16",
+    "types": ["node"],
     "lib": ["ES2024", "DOM"],
     "skipLibCheck": true,
     "rootDir": "./src",
     "outDir": "./dist",
     "declaration": true,
-    "strict": true
+    "strict": true,
+    "typeRoots": ["./node_modules/@types"]
   },
   "exclude": ["node_modules", "dist", "test", "vitest.config.ts"]
 }

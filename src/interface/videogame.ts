@@ -1,5 +1,16 @@
-export type Platform = 'PC' | 'PlayStation 5' | 'Xbox Series X/S' | 'Nintendo Switch' | 'Steam Deck';
-export type Genre = 'Acción' | 'Aventura' | 'Rol' | 'Estrategia' | 'Deportes' | 'Simulación';
+export type Platform =
+  | "PC"
+  | "PlayStation 5"
+  | "Xbox Series X/S"
+  | "Nintendo Switch"
+  | "Steam Deck";
+export type Genre =
+  | "Acción"
+  | "Aventura"
+  | "Rol"
+  | "Estrategia"
+  | "Deportes"
+  | "Simulación";
 
 export interface Videogame {
   id: number;

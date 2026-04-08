@@ -1,8 +1,8 @@
-import fs from 'fs';
-import chalk from 'chalk';
-import { Videogame } from '../interface/videogame.js';
+import fs from "fs";
+import chalk from "chalk";
+import { Videogame } from "../interface/videogame.js";
 
-const BASE_DIR = './data';
+const BASE_DIR = "./data";
 
 function getFilePath(user: string, id: number): string {
   return `${BASE_DIR}/${user}/${id}.json`;
@@ -16,10 +16,10 @@ function ensureUserDir(user: string): void {
 }
 
 function colorValue(value: number): string {
-  if (value >= 60)      return chalk.green(String(value));
+  if (value >= 60) return chalk.green(String(value));
   else if (value >= 40) return chalk.yellow(String(value));
   else if (value >= 20) return chalk.magenta(String(value));
-  else                  return chalk.red(String(value));
+  else return chalk.red(String(value));
 }
 
 function printVideogame(vg: Videogame): void {
@@ -80,7 +80,7 @@ export function readVideogame(user: string, id: number): void {
     return;
   }
 
-  const vg: Videogame = JSON.parse(fs.readFileSync(path, 'utf-8'));
+  const vg: Videogame = JSON.parse(fs.readFileSync(path, "utf-8"));
   printVideogame(vg);
 }
 
@@ -101,9 +101,9 @@ export function listVideogames(user: string): void {
 
   console.log(chalk.green(`${user} videogame collection`));
   files.forEach((file) => {
-    console.log('--------------------------------');
+    console.log("--------------------------------");
     const vg: Videogame = JSON.parse(
-      fs.readFileSync(`${dir}/${file}`, 'utf-8')
+      fs.readFileSync(`${dir}/${file}`, "utf-8"),
     );
     printVideogame(vg);
   });
