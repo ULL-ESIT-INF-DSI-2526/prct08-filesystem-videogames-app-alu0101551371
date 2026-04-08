@@ -4,10 +4,21 @@ import { Videogame } from "../interface/videogame.js";
 
 const BASE_DIR = "./data";
 
+/**
+ * Función para obtener la ruta del archivo de un videojuego dado el usuario y el ID. 
+ * Si el archivo no existe, se creará automáticamente al agregar un nuevo videojuego.
+ * @param user Nombre del usuario al que pertenece la colección de videojuegos
+ * @param id Identificador único del videojuego dentro de la colección del usuario
+ * @returns Ruta del archivo del videojuego
+ */
 function getFilePath(user: string, id: number): string {
   return `${BASE_DIR}/${user}/${id}.json`;
 }
 
+/**
+ * Función para asegurar que el directorio del usuario exista. Si no existe, se crea automáticamente.
+ * @param user Nombre del usuario al que pertenece la colección de videojuegos
+ */
 function ensureUserDir(user: string): void {
   const dir = `${BASE_DIR}/${user}`;
   if (!fs.existsSync(dir)) {
@@ -15,6 +26,11 @@ function ensureUserDir(user: string): void {
   }
 }
 
+/**
+ * Función para colorear el valor de mercado del videojuego según su rango.
+ * @param value Valor de mercado del videojuego
+ * @returns Color del valor formateado como string
+ */
 function colorValue(value: number): string {
   if (value >= 60) return chalk.green(String(value));
   else if (value >= 40) return chalk.yellow(String(value));
@@ -22,6 +38,10 @@ function colorValue(value: number): string {
   else return chalk.red(String(value));
 }
 
+/**
+ * Función para imprimir los detalles de un videojuego en la consola de forma formateada.
+ * @param vg Videojuego a imprimir
+ */
 function printVideogame(vg: Videogame): void {
   console.log(`ID: ${vg.id}`);
   console.log(`Name: ${vg.name}`);
@@ -35,6 +55,12 @@ function printVideogame(vg: Videogame): void {
   console.log(`Market value: ${colorValue(vg.value)}`);
 }
 
+/**
+ * Función para agregar un nuevo videojuego a la colección de un usuario. 
+ * Si el videojuego ya existe, se muestra un mensaje de error.
+ * @param user Nombre del usuario al que pertenece la colección de videojuegos
+ * @param vg Videojuego a agregar a la colección del usuario
+ */
 export function addVideogame(user: string, vg: Videogame): void {
   ensureUserDir(user);
   const path = getFilePath(user, vg.id);
@@ -48,6 +74,12 @@ export function addVideogame(user: string, vg: Videogame): void {
   console.log(chalk.green(`New videogame added to ${user} collection!`));
 }
 
+/**
+ * Función para eliminar un videojuego de la colección de un usuario. 
+ * Si el videojuego no existe, se muestra un mensaje de error.
+ * @param user Nombre del usuario al que pertenece la colección de videojuegos
+ * @param id Identificador único del videojuego dentro de la colección del usuario
+ */
 export function removeVideogame(user: string, id: number): void {
   const path = getFilePath(user, id);
 
@@ -60,6 +92,12 @@ export function removeVideogame(user: string, id: number): void {
   console.log(chalk.green(`Videogame removed from ${user} collection!`));
 }
 
+/**
+ * Función para actualizar los detalles de un videojuego existente en la colección de un usuario. 
+ * Si el videojuego no existe, se muestra un mensaje de error.
+ * @param user Nombre del usuario al que pertenece la colección de videojuegos
+ * @param vg Videojuego con los detalles actualizados a actualizar en la colección del usuario
+ */
 export function updateVideogame(user: string, vg: Videogame): void {
   const path = getFilePath(user, vg.id);
 
@@ -72,6 +110,11 @@ export function updateVideogame(user: string, vg: Videogame): void {
   console.log(chalk.green(`Videogame updated at ${user} collection!`));
 }
 
+/**
+ * Función para leer los detalles de un videojuego en la colección de un usuario.
+ * @param user Nombre del usuario al que pertenece la colección de videojuegos
+ * @param id Identificador único del videojuego dentro de la colección del usuario
+ */
 export function readVideogame(user: string, id: number): void {
   const path = getFilePath(user, id);
 
@@ -84,6 +127,11 @@ export function readVideogame(user: string, id: number): void {
   printVideogame(vg);
 }
 
+/**
+ * Función para listar todos los videojuegos en la colección de un usuario. 
+ * Si el usuario no tiene colección o la colección está vacía, se muestra un mensaje de error.
+ * @param user Nombre del usuario al que pertenece la colección de videojuegos
+ */
 export function listVideogames(user: string): void {
   const dir = `${BASE_DIR}/${user}`;
 
