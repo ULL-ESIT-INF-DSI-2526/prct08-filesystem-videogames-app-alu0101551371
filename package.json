@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "dev": "tsc-watch --onSuccess \"node dist/pe103/command.js\"",
     "doc": "typedoc",
     "test": "vitest",
     "format": "prettier --write .",

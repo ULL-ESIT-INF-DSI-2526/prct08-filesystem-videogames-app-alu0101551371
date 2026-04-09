@@ -5,7 +5,7 @@ import { Videogame } from "../interface/videogame.js";
 const BASE_DIR = "./data";
 
 /**
- * Función para obtener la ruta del archivo de un videojuego dado el usuario y el ID. 
+ * Función para obtener la ruta del archivo de un videojuego dado el usuario y el ID.
  * Si el archivo no existe, se creará automáticamente al agregar un nuevo videojuego.
  * @param user Nombre del usuario al que pertenece la colección de videojuegos
  * @param id Identificador único del videojuego dentro de la colección del usuario
@@ -56,7 +56,7 @@ function printVideogame(vg: Videogame): void {
 }
 
 /**
- * Función para agregar un nuevo videojuego a la colección de un usuario. 
+ * Función para agregar un nuevo videojuego a la colección de un usuario.
  * Si el videojuego ya existe, se muestra un mensaje de error.
  * @param user Nombre del usuario al que pertenece la colección de videojuegos
  * @param vg Videojuego a agregar a la colección del usuario
@@ -75,7 +75,7 @@ export function addVideogame(user: string, vg: Videogame): void {
 }
 
 /**
- * Función para eliminar un videojuego de la colección de un usuario. 
+ * Función para eliminar un videojuego de la colección de un usuario.
  * Si el videojuego no existe, se muestra un mensaje de error.
  * @param user Nombre del usuario al que pertenece la colección de videojuegos
  * @param id Identificador único del videojuego dentro de la colección del usuario
@@ -93,7 +93,7 @@ export function removeVideogame(user: string, id: number): void {
 }
 
 /**
- * Función para actualizar los detalles de un videojuego existente en la colección de un usuario. 
+ * Función para actualizar los detalles de un videojuego existente en la colección de un usuario.
  * Si el videojuego no existe, se muestra un mensaje de error.
  * @param user Nombre del usuario al que pertenece la colección de videojuegos
  * @param vg Videojuego con los detalles actualizados a actualizar en la colección del usuario
@@ -128,7 +128,7 @@ export function readVideogame(user: string, id: number): void {
 }
 
 /**
- * Función para listar todos los videojuegos en la colección de un usuario. 
+ * Función para listar todos los videojuegos en la colección de un usuario.
  * Si el usuario no tiene colección o la colección está vacía, se muestra un mensaje de error.
  * @param user Nombre del usuario al que pertenece la colección de videojuegos
  */

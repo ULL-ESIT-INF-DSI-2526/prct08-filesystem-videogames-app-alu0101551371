@@ -44,21 +44,25 @@ data/                 # Almacenamiento de colecciones (creado en tiempo de ejecu
 ## Compilación y Ejecución
 
 ### Compilar el proyecto
+
 ```bash
 npm run dev
 ```
 
 ### Ejecutar tests
+
 ```bash
 npm test
 ```
 
 ### Cobertura de tests
+
 ```bash
 npm run coverage
 ```
 
 ### Generar documentación
+
 ```bash
 npm run doc
 ```
@@ -75,6 +79,7 @@ New videogame added to edusegre collection!
 ```
 
 Intentar agregar un duplicado:
+
 ```bash
 $ node dist/videogames-app.js add --user "edusegre" --id 1 --name "The Legend of Zelda: Breath of the Wild" --desc "An open-world adventure game" --platform "Nintendo Switch" --genre "Adventure" --developer "Nintendo" --year 2017 --multiplayer false --hours 50 --value 45
 Videogame already exists at edusegre collection!
@@ -109,6 +114,7 @@ Videogame updated at edusegre collection!
 ```
 
 Intentar actualizar un videojuego inexistente:
+
 ```bash
 $ node dist/videogames-app.js update --user "edusegre" --id 3 --name "The Legend of Zelda: Breath of the Wild" --desc "An acclaimed open-world adventure game" --platform "Nintendo Switch" --genre "Adventure" --developer "Nintendo" --year 2017 --multiplayer false --hours 60 --value 50
 Videogame not found at edusegre collection!
@@ -131,6 +137,7 @@ Market value: 50
 ```
 
 Intentar leer un videojuego inexistente:
+
 ```bash
 $ node dist/videogames-app.js read --user "edusegre" --id 3
 Videogame not found at edusegre collection!
@@ -144,6 +151,7 @@ Videogame removed from edusegre collection!
 ```
 
 Intentar eliminar un videojuego inexistente:
+
 ```bash
 $ node dist/videogames-app.js remove --user "edusegre" --id 3
 Videogame not found at edusegre collection!
